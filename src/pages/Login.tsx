@@ -1,8 +1,6 @@
 import { useForm } from "react-hook-form";
 import { LoginProps } from "../types";
 
-//
-//
 const Login = () => {
   const {
     register,
@@ -14,91 +12,80 @@ const Login = () => {
     //
     console.log(data);
   };
-
   return (
-    <div className="flex flex-col h-screen md:items-center  ">
-      <header className="flex-1 max-h-[100px] w-screen items-center justify-center   ">
-        <a href=""></a>
-        <span>Tu gestion es nuestra prioridad.</span>
-      </header>
-      <main className="flex-1 md:mt-16 md:flex-none md:max-h-[400px] md:flex md:border-2 md:rounded-xl md:shadow-xl  md:max-w-[450px] md:w-full md:h-full  items-center justify-center">
-        <div className="flex flex-col md:w-full items-center ">
-          <h2 className="text-4xl text-black text-center  font-lobster ">
-            Binnacle System
-          </h2>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="mt-8 p-4 space-y-3 flex-col  max-w-[500px] "
-          >
-            <label
-              htmlFor="username"
-              className="input input-bordered flex items-center gap-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="h-4 w-4 opacity-70"
-              >
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
-              </svg>
-              <input
-                id="username"
-                type="text"
-                className="grow"
-                placeholder="Usuario"
-                {...register("username", {
-                  required: "Usuario es obligatorio",
-                })}
-              />
-            </label>
-            {errors.username && (
-              <p className="text-red-500 text-sm">{errors.username.message}</p>
-            )}
+    <div className="h-screen w-full flex flex-col items-center justify-center bg-slate-100">
+      <header className="w-full bg-pink-400">Header vacio</header>
 
-            <label
-              className="input input-bordered flex items-center gap-2"
-              htmlFor="password"
+      <main className="w-10/12 glass sm:w-5/12 md:w-6/12 lg:w-5/12 xl:w-3/12 bg-white mt-10">
+        <div className="w-full text-center my-5">
+          <h1 className="text-4xl font-bold">Binnacle System</h1>
+        </div>
+        <form
+          className="w-full px-3 space-y-3  mt-20 "
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <label
+            htmlFor="username"
+            className="input input-bordered flex items-center gap-2  "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              className="h-4 w-4 opacity-70"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="h-4 w-4 opacity-70"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <input
-                id="password"
-                type="password"
-                className="grow"
-                placeholder="Password"
-                {...register("password", {
-                  required: "Contraseña es obligatorio",
-                })}
-              />
-            </label>
-            {errors.password && (
-              <p className="text-red-500 text-sm">{errors.password.message}</p>
-            )}
-            <div className="divider"></div>
-            <button
-              type="submit"
-              className="btn  md:btn-md  w-full bg-blue-400 "
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+            </svg>
+            <input
+              id="username"
+              type="text"
+              className="grow "
+              placeholder="Usuario"
+              {...register("username", {
+                required: "Usuario es obligatorio",
+              })}
+            />
+          </label>
+          {errors.username && (
+            <p className="text-red-500 text-sm">{errors.username.message}</p>
+          )}
+          <label
+            htmlFor="password"
+            className="input input-bordered flex items-center gap-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              className="h-4 w-4 opacity-70"
             >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+            </svg>
+            <input
+              id="password"
+              type="password"
+              className="grow"
+              placeholder="Password"
+              {...register("password", {
+                required: "Contraseña es obligatorio",
+              })}
+            />
+          </label>
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password.message}</p>
+          )}
+          <div className="mx-5  py-10">
+            <button type="submit" className="btn w-full text-xl bg-blue-400 ">
               Login
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </main>
-      <footer className="flex-1 text-black ">
-        <div className="container mx-auto  flex flex-col  justify-center items-center md:mt-10 md:w-full ">
+
+      <footer className=" w-10/12 md:w-8/12 lg:w-5/12  mt-20">
+        <div className="flex flex-col items-center">
           <h3 className="font-semibold text-lg">Get In Touch</h3>
-          <p className="mt-4 text-gray-400">
+          <p className=" text-gray-400">
             Email:{" "}
             <a
               href="mailto:support@binnacle.com"
@@ -120,7 +107,7 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-sm">
+        <div className="border-t border-gray-700 mt-4 pt-2 text-center text-gray-500 text-sm">
           © 2024 Binnacle. All rights reserved.
         </div>
       </footer>
